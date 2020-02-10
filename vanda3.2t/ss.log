@@ -1,0 +1,21 @@
+● foundationdb.service - FoundationDB Key-Value Store
+   Loaded: loaded (/usr/lib/systemd/system/foundationdb.service; enabled; vendor preset: disabled)
+   Active: active (running) since Wed 2020-02-05 15:25:40 CST; 18s ago
+  Process: 8407 ExecStart=/usr/lib/foundationdb/fdbmonitor --conffile /etc/foundationdb/foundationdb.conf --lockfile /var/run/fdbmonitor.pid --daemonize (code=exited, status=0/SUCCESS)
+ Main PID: 8408 (fdbmonitor)
+    Tasks: 5
+   CGroup: /system.slice/foundationdb.service
+           ├─8408 /usr/lib/foundationdb/fdbmonitor --conffile /etc/foundationdb/foundationdb.conf --lockfile /var/run/fdbmonitor.pid --daemonize
+           ├─8409 /usr/lib/foundationdb/backup_agent/backup_agent --cluster_file /etc/foundationdb/fdb.cluster --logdir /var/log/foundationdb
+           └─8422 /usr/lib/foundationdb/fdbmonitor --conffile /etc/foundationdb/foundationdb.conf --lockfile /var/run/fdbmonitor.pid --daemonize
+
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbmonitor": Starting fdbserver.4500
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="backup_agent.1": Launching /usr/lib/foundationdb/backup_agent/backup_agent (8409) for backup_agent.1
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": Launching /usr/sbin/fdbserver (8410) for fdbserver.4500
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": ERROR: error creating or opening process id file `/var/lib/foundationdb/data/4500/processId'.
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": Fatal Error: Incompatible protocol version
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": Process 8410 exited 1, restarting in 0 seconds
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": Launching /usr/sbin/fdbserver (8417) for fdbserver.4500
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": ERROR: error creating or opening process id file `/var/lib/foundationdb/data/4500/processId'.
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": Fatal Error: Incompatible protocol version
+Feb 05 15:25:40 sfx-10-202 fdbmonitor[8408]: LogGroup="default" Process="fdbserver.4500": Process 8417 exited 1, restarting in 61 seconds

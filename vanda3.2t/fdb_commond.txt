@@ -1,0 +1,4 @@
+root      7016     1  0 16:03 ?        00:00:00 /usr/lib/foundationdb/fdbmonitor --conffile /etc/foundationdb/foundationdb.conf --lockfile /var/run/fdbmonitor.pid --daemonize
+foundat+  7017  7016  0 16:03 ?        00:00:09 /usr/lib/foundationdb/backup_agent/backup_agent --cluster_file /etc/foundationdb/fdb.cluster --logdir /var/log/foundationdb
+foundat+  7018  7016  0 16:03 ?        00:00:21 /usr/sbin/fdbserver --cluster_file /etc/foundationdb/fdb.cluster --datadir /var/lib/foundationdb/data/4500 --listen_address public --logdir /var/log/foundationdb --public_address auto:4500
+tcn      18943 15229  0 17:03 pts/3    00:00:00 grep --color=auto foun
